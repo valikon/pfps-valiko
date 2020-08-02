@@ -1,0 +1,36 @@
+# sbt
+bin/
+project/target/
+project/project/target/
+project/metals.sbt
+target/
+build/
+.bloop/
+
+# metals
+.metals/
+project/.bloop/
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
+.semanticdb
+
+# mac
+.DS_Store
+
+# other
+.history
+.scala_dependencies
+.cache
+.cache-main
+
+# general
+*.class
+*.db
+
+# emacs
+.projectile
