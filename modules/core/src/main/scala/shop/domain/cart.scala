@@ -11,5 +11,5 @@ object cart {
   @newtype case class CartId(value: UUID)
 
   case class CartItem(item: Item, quantity: Quantity)
-  case class CartTotal(item: List[CartItem], total: Money)
+  case class CartTotal(items: List[CartItem], total: Money)
 }
