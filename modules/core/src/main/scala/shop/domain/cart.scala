@@ -4,6 +4,8 @@ import io.estatico.newtype.macros.newtype
 import item._
 import java.util.UUID
 import squants.market.Money
+import shop.domain.auth.UserId
+import scala.util.control.NoStackTrace
 
 object cart {
   @newtype case class Quantity(value: Int)
@@ -12,4 +14,6 @@ object cart {
 
   case class CartItem(item: Item, quantity: Quantity)
   case class CartTotal(items: List[CartItem], total: Money)
+
+  case class CartNotFound(userId: UserId) extends NoStackTrace
 }

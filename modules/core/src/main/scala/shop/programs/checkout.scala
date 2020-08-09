@@ -8,18 +8,18 @@ import shop.domain.checkout.Card
 import shop.domain.order._
 import shop.domain.payment.Payment
 import shop.effects._
-import shop.http.clients.PaymentsClient
+import shop.http.clients.PaymentClient
 
 import cats.effect.Timer
 import cats.implicits._
 import io.chrisdavenport.log4cats.Logger
 import retry.RetryDetails._
 import retry._
-import squants.market.Money
 import scala.concurrent.duration._
+import squants.market.Money
 
 final class CheckoutProgram[F[_]: Background: Logger: MonadThrow: Timer](
-  paymentClient: PaymentsClient[F],
+  paymentClient: PaymentClient[F],
   shoppingCart: ShoppingCart[F],
   orders: Orders[F],
   retryPolicy: RetryPolicy[F]
