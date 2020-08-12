@@ -4,13 +4,18 @@ import io.estatico.newtype.macros.newtype
 import java.util.UUID
 import eu.timepit.refined.types.string.NonEmptyString
 import scala.util.control.NoStackTrace
+import javax.crypto.Cipher
 
 object auth {
 
   @newtype case class UserId(value: UUID)
   @newtype case class UserName(value: String)
   @newtype case class Password(value: String)
-  @newtype case class JwtToken(value: String)
+
+  @newtype case class EncryptedPassword(value: String)
+
+  @newtype case class EncryptCipher(value: Cipher)
+  @newtype case class DecryptCipher(value: Cipher)
 
   // ----- user registration -----
 

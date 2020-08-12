@@ -3,11 +3,12 @@ package shop.http
 // import shop.ext.refined._  // Not neeeded ??
 import shop.domain.auth._
 import shop.domain.brand._
-import shop.domain.category._
-import shop.domain.item._
 import shop.domain.cart._
-import shop.domain.order._
+import shop.domain.category._
 import shop.domain.checkout._
+import shop.domain.healthcheck._
+import shop.domain.item._
+import shop.domain.order._
 import shop.domain.payment._
 import shop.http.auth.users._
 
@@ -96,6 +97,8 @@ private[http] trait JsonCodecs {
   implicit val userEncoder: Encoder[User] = deriveEncoder[User]
 
   implicit val paymentEncoder: Encoder[Payment] = deriveEncoder[Payment]
+
+  implicit val appStatusEncoder: Encoder[AppStatus] = deriveEncoder[AppStatus]
 
   implicit val createUserDecoder: Decoder[CreateUser] = deriveDecoder[CreateUser]
 
